@@ -10,10 +10,8 @@ import uvicorn
 from dotenv import load_dotenv
 
 load_dotenv()
-#API_TOKEN = os.getenv("BOT_TOKEN")
-#PORT = int(os.getenv("PORT", 8080))
-BOT_TOKEN = "8571820554:AAFuvPpbdK4jewtTMvaWon4ScSn5r4A_fIE"
-PORT = 10000
+API_TOKEN = os.getenv("BOT_TOKEN")
+PORT = int(os.getenv("PORT"))
 
 disp = Dispatcher()
 app = FastAPI()
@@ -27,7 +25,7 @@ async def check():
     return {"status":"bot is running"}
 
 async def main():
-    bot = Bot(token=BOT_TOKEN)
+    bot = Bot(token=API_TOKEN)
     await disp.start_polling(bot)
 
 
@@ -36,7 +34,7 @@ async def runner():
 
 @app.on_event("startup")
 async def startup():
-    bot  = Bot(token=BOT_TOKEN)
+    bot  = Bot(token=API_TOKEN)
     asyncio.create_task(disp.start_polling(bot))
     
     
