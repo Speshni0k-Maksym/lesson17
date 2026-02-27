@@ -5,4 +5,3 @@ aiohttp
 pydantic
 python-multipart
 dotenv
-threading
