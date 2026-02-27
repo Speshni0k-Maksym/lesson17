@@ -22,11 +22,9 @@ app = FastAPI()
 async def startMethod(message: Message):
     await message.answer("Bot active")
 
-@app.get("/")
-async def checker():
-    return {"status": "Bot is active"}
-
-
+@app.api_route("/", methods=["GET", "HEAD"])
+async def check():
+    return {"status":"bot is running"}
 
 async def main():
     bot = Bot(token=BOT_TOKEN)
