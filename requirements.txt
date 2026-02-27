@@ -4,4 +4,3 @@ uvicorn
 aiohttp
 pydantic
 python-multipart
-dotenv
