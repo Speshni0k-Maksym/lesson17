@@ -36,7 +36,7 @@ async def main():
 async def runner():
     asyncio.run(main())
 
-@app.on_event("startup")
+@app.lifespan("startup")
 async def startup():
     bot  = Bot(token=BOT_TOKEN)
     asyncio.create_task(disp.start_polling(bot))
