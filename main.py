@@ -12,7 +12,7 @@ load_dotenv()
 #API_TOKEN = os.getenv("BOT_TOKEN")
 #PORT = int(os.getenv("PORT", 8080))
 BOT_TOKEN = "8571820554:AAFuvPpbdK4jewtTMvaWon4ScSn5r4A_fIE"
-PORT = 8080
+PORT = 10000
 
 disp = Dispatcher()
 app = FastAPI()
